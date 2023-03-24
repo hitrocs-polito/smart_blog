@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h2>Edit article</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        <p>Do you want to delete <b>{{ article.title }}</b> article?</p>
+        <button type="submit" class="btn btn-dark">Yes</button>
+        <a href="{% url 'article_detail' article.id %}">Back</a>
+    </form>
+{% endblock content %}
